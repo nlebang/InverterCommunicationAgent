@@ -1,0 +1,33 @@
+
+Assuming the current code is at $HOME/Code/InverterCommunicationAgent
+1.	Get OP-TEE and keep it at $HOME. Build OP-TEE by following the build instructions.
+2.	After building OP-TEE, enable folder sharing by editing $HOME/devel/optee/build/common.mk.
+	Look for the following, and set them as shown:
+		QEMU_VIRTFS_ENABLE		?= n
+		QEMU_VIRTFS_HOST_DIR	?= $(ROOT)
+3.	Get libmodbus from git, and keep it one level up at $HOME/Code/libmodbus-master.
+4. 	Run build.sh from $HOME/Code/InverterCommunicationAgent.
+5. 	Go to $HOME/devel/optee/build
+6. 	Run `make all run`
+7. 	After things settle down in the terminal(not xterm), press c in the terminal(not xterm) to start OP-TEE
+8. 	In the normal world xterm window, do the following:
+		ifconfig lo up
+		mount_shared /tmp
+		tee-supplicant &
+9. 	Execute the following to copy yhe necessary files and run the client and the server
+		sh /tmp/myPrograms/output/run.sh
+	In case the client and server do not execute properly, then run the client and server manually as:
+		server &
+		client
+	When running manually, it should be noted that the client and server can take a single parameter which denotes the malicious-ness as follows:
+		Client malicious=> 1
+			server 1 &
+			client 1
+		Server malicious=> 2
+			server 2 &
+			client 2
+		Client and Server both malicious=> 3
+			server 3 &
+			client 3
+	To redirect the output use something as follows:
+		server > serverOutputFile 2>/dev/null &
