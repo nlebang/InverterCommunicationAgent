@@ -5,6 +5,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+/*
+ * Copyright © 2017 Utkarsh Agrawal <utkarsh.agrawal@wsu.edu> <uautkarsh@gmail.com>
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 #ifndef _UNIT_TEST_H_
 #define _UNIT_TEST_H_
 

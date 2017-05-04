@@ -1,3 +1,6 @@
+# Copyright © 2017 Utkarsh Agrawal <utkarsh.agrawal@wsu.edu> <uautkarsh@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
+
 cp -rf /tmp/hello_world/host/hello_world /bin/hello_world
 cp -rf /tmp/hello_world/ta/8aaaf200-2450-11e4-abe2-0002a5d5c51b.ta /lib/optee_armtz/8aaaf200-2450-11e4-abe2-0002a5d5c51b.ta
 
